@@ -256,7 +256,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 120
   m_CollisionDetection: 2
 --- !u!1001 &196167161
 PrefabInstance:
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e393e5aa700bb764ea2debe758cd0003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeePrefab: {fileID: 0}
+  Text_Lives: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   lives: 3
   balloons: []
@@ -1173,7 +1173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4715305282580951308, guid: 00191410baf2fb448aa80392f05bdb7f, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9146999742379276746, guid: 00191410baf2fb448aa80392f05bdb7f, type: 3}
       propertyPath: m_RootOrder

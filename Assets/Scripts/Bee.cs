@@ -47,4 +47,17 @@ public class Bee : MonoBehaviour
             GameManager.S.LoseLife();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "RedZone")
+        {
+            transform.position = GameManager.S.startPos;
+            asleep = true;
+            GameManager.S.LoseLife();
+        } else if (other.tag == "Balloon")
+        {
+            GameManager.S.BalloonPopped(other.name);
+        }
+    }
 }
