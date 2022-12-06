@@ -5,28 +5,32 @@ using UnityEngine;
 public class Bee : MonoBehaviour
 {
     public Vector3 mousePos3D;
-    public Vector3 lastValidPosition;
     public bool isTouchingAWall = false;
-    public bool asleep = true;
+    public bool asleep = true; // If true, Bee will follow the player's mouse input. If false, Bee will remain stationary.
     // Start is called before the first frame update
     void Start()
     {
-        lastValidPosition = transform.position;
+        transform.position = GameManager.S.BeeSpawnPoint.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Convert the position of the mouse pointer to a point in the game.
         Vector3 mousePos2D = Input.mousePosition;
         mousePos2D.z = -Camera.main.transform.position.z;
         mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
 
+        // Once the mouse is close enough to the Bee, it will start following the mouse as it moves.
+        // This ensures that the Bee won't be placed out of bounds when it spawns.
         if( Vector3.Distance(mousePos3D, transform.position) < 1.0f )
         {
             asleep = false;
         }
 
-        if ( !asleep ) { 
+        // This if statement blocks the Bee's movement until the player has put the mouse close enough to it.
+        if ( !asleep && GameManager.S.isTimerActive) { 
+            // Blocks the Bee's movement if there is an obstacle between it and the mouse.
             if ( !Physics.Linecast(transform.position, mousePos3D) ) {
                 isTouchingAWall = true;
                 transform.position = mousePos3D;
@@ -38,6 +42,7 @@ public class Bee : MonoBehaviour
         
     }
 
+<<<<<<< Updated upstream
     private void OnCollisionEnter(Collision collision)
     {
         if( collision.gameObject.tag == "RedZone" )
@@ -45,6 +50,21 @@ public class Bee : MonoBehaviour
             transform.position = GameManager.S.startPos;
             asleep = true;
             GameManager.S.LoseLife();
+=======
+    private void OnTriggerEnter(Collider other)
+    {
+        // If the player touches a Red Zone or Bomb, reset it's position to spawn and lose a life.
+        if (other.gameObject.tag == "RedZone" || other.gameObject.tag == "Bomb")
+        {
+            transform.position = GameManager.S.BeeSpawnPoint.transform.position;
+            asleep = true;
+            GameManager.S.LoseLife();
+        
+        // If the player touches a balloon, pop it.
+        } else if (other.tag == "Balloon")
+        {
+            GameManager.S.BalloonPopped(other.name);
+>>>>>>> Stashed changes
         }
     }
 }
