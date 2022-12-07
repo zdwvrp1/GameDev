@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
         {
             LevelComplete(true);
             isTimerActive = false;
+            SceneManager.LoadScene("_End_Screen");
         }
 
         // Once the player is out of lives, the level is lost.
@@ -146,7 +147,7 @@ public class GameManager : MonoBehaviour
 
 
 // Config:
-// Add "Balloon" and "RedZone" layers in project settings
+// Add "Balloon", "RedZone", "Bee", and "Wall" layers in project settings
 // Add all scenes to File>Build Settings>Setting in Build
 
 //**********************************************************
