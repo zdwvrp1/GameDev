@@ -42,15 +42,17 @@ public class Bee : MonoBehaviour
         
     }
 
-<<<<<<< Updated upstream
     private void OnCollisionEnter(Collision collision)
     {
-        if( collision.gameObject.tag == "RedZone" )
+        if (collision.gameObject.tag == "RedZone")
         {
+            Debug.Log("hit redzone");
             transform.position = GameManager.S.startPos;
             asleep = true;
             GameManager.S.LoseLife();
-=======
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // If the player touches a Red Zone or Bomb, reset it's position to spawn and lose a life.
@@ -64,7 +66,6 @@ public class Bee : MonoBehaviour
         } else if (other.tag == "Balloon")
         {
             GameManager.S.BalloonPopped(other.name);
->>>>>>> Stashed changes
         }
     }
 }

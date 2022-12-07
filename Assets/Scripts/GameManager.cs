@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
     public Vector3 startPos = Vector3.zero; // Starting position for the bee on the level.
     public int lives = 3; // Number of lives the player has.
     public int points = 0; // Number of points the player has.
-    public float timer = 240; // Timer.
+    public float timer = 20; // Timer.
 
     [Header("Set Dynamically")]
     public List<GameObject> balloons; // List that contains all balloons present in the level.
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        PlayerPrefs.SetInt("score", 0);
         StartLevel();
     }
 
@@ -44,6 +47,23 @@ public class GameManager : MonoBehaviour
             float minutes = Mathf.Floor(timer / 60);
             float seconds = Mathf.Floor(timer % 60);
             Text_Timer.text = "Time: " + minutes + ":" + seconds;
+            if (seconds >= 10F)
+            {
+                Text_Timer.text = "Time: " + minutes + ":" + seconds;
+            }
+            else if (seconds < 10F)
+            {
+                Text_Timer.text = "Time: " + minutes + ":" + "0" + seconds ;
+            } else
+            {
+                Text_Timer.text = "Time: " + minutes + ":00";
+            }
+
+            if (minutes == 0F && seconds == 0F)
+            {
+                isTimerActive = false;
+                SceneManager.LoadScene("_End_Screen");
+            }
         }
 
         // Once all balloons are destroyed, the level is won.
@@ -59,6 +79,7 @@ public class GameManager : MonoBehaviour
             LevelComplete(false);
             isTimerActive = false;
         }
+
     }
 
     private void StartLevel()
@@ -119,5 +140,34 @@ public class GameManager : MonoBehaviour
     {
         points += pointsToAdd;
         Text_Points.text = "Points: " + points;
+        PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 1);
     }
 }
+
+
+// Config:
+// Add "Balloon" and "RedZone" layers in project settings
+// Add all scenes to File>Build Settings>Setting in Build
+
+//**********************************************************
+
+// TODO:
+
+// - Create 4 levels
+//      - Create more empty gameobjects like "Level_01" in _Scene_0 
+//      - or
+//      - Make a new scene for each level
+
+// - Create a pause button
+
+// - add "brief introduction how the game is played, developer names, a start button, as well as the
+//   levels the player last played" to start scene
+//      - last levels could be dont with a playerPref
+
+// "Environment has a distinct theme, with each element is purposeful and meaningful for the scene"
+
+
+
+
+
+
