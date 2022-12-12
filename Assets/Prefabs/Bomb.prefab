@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8755220524491718386}
   - component: {fileID: 8755220524491718384}
   - component: {fileID: 8755220524491718387}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Wick (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8755220524726808843}
   - component: {fileID: 8755220524726808841}
   - component: {fileID: 8755220524726808840}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Wick (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8755220525269498496}
   - component: {fileID: 8755220525269498510}
   - component: {fileID: 8755220525269498497}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,8 +258,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8755220525616138595}
-  - component: {fileID: 8755220525616138594}
-  m_Layer: 10
+  - component: {fileID: 1016763675594681725}
+  m_Layer: 7
   m_Name: Bomb
   m_TagString: Bomb
   m_Icon: {fileID: 0}
@@ -285,8 +285,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8755220525616138594
-BoxCollider:
+--- !u!135 &1016763675594681725
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -296,8 +296,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.3, z: 1}
-  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8755220525914211150
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 8755220525914211151}
   - component: {fileID: 8755220525914211149}
   - component: {fileID: 8755220525914211148}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Wick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
