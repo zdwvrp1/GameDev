@@ -38,7 +38,7 @@ public class Main : MonoBehaviour
 
         } else
         {
-            SceneManager.LoadScene("_End_Scene");
+            SceneManager.LoadScene("_End_Screen");
         }
         
         

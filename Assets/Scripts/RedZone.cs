@@ -69,7 +69,7 @@ public class RedZone : MonoBehaviour
 
         if (shouldRotate == true)
         {
-            Vector3 rotationToAdd = new Vector3(0, 0, rotationalSpeed);
+            Vector3 rotationToAdd = new Vector3(0, 0, speed * Time.deltaTime);
             transform.Rotate(rotationToAdd);
         }
     }

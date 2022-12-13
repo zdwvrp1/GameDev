@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3597240332947162209}
   - component: {fileID: 4715305282580951308}
   - component: {fileID: 155129254}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Bee
   m_TagString: Bee
   m_Icon: {fileID: 0}
@@ -53,8 +53,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos3D: {x: 0, y: 0, z: 0}
+  lastPos: {x: 0, y: 0, z: 0}
+  lastLastPos: {x: 0, y: 0, z: 0}
+  relativeMousePos: {x: 0, y: 0, z: 0}
   SpawnPoint: {fileID: 0}
   speed: 100
+  angle: 0
   asleep: 1
 --- !u!65 &4715305282580951308
 BoxCollider:
@@ -96,7 +100,7 @@ GameObject:
   - component: {fileID: 9146999742479442341}
   - component: {fileID: 9146999742479442342}
   - component: {fileID: 9146999742479442343}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Body_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +183,7 @@ GameObject:
   - component: {fileID: 9146999742546133710}
   - component: {fileID: 9146999742546133699}
   - component: {fileID: 9146999742546133696}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Body_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +266,7 @@ GameObject:
   - component: {fileID: 9146999742647552557}
   - component: {fileID: 9146999742647552558}
   - component: {fileID: 9146999742647552559}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Body_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +349,7 @@ GameObject:
   - component: {fileID: 9146999742648051111}
   - component: {fileID: 9146999742648051128}
   - component: {fileID: 9146999742648051129}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Body_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +432,7 @@ GameObject:
   - component: {fileID: 9146999743501389911}
   - component: {fileID: 9146999743501389864}
   - component: {fileID: 9146999743501389865}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: RWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +515,7 @@ GameObject:
   - component: {fileID: 9146999743678960638}
   - component: {fileID: 9146999743678960627}
   - component: {fileID: 9146999743678960624}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Body_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9146999743979405465}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +631,7 @@ GameObject:
   - component: {fileID: 9146999744156972117}
   - component: {fileID: 9146999744156972118}
   - component: {fileID: 9146999744156972119}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: LWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
